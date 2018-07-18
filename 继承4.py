@@ -7,7 +7,8 @@ class Person():
     _petname = "sec"# 小名，是保护的，子类可以用，但不能公用
     def sleep(self):
         print("Sleeping ....")
-    def work(self):
+    def work(self,adr):
+        print("adr is ")
         print("make some money")
 
 
@@ -17,12 +18,13 @@ class Teachar(Person):
     name = "XIAOJIA"
     def make_test(self):
         print("attention")
-    def work(self):
+    def work(self,adr):
         #扩充父类的功能只需要调用父类相同的函数
-        # 方法1 Person.work(self)
+         #方法1
+         Person.work(self,adr)
         #方法2 super代表得到父类
-        super().work()
-        self.make_test()
+       # super().work()
+        #self.make_test()
 
 t=Teachar()
-t.work()
+t.work(" mingxi")
